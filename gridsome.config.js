@@ -12,7 +12,7 @@ function addStyleResource (rule) {
 }
 
 module.exports = {
-	siteName: 'Flare Starter',
+	siteName: 'Paulina Osuna',
 	plugins: [],
 	chainWebpack (config) {
 		const types = ['vue-modules', 'vue', 'normal-modules', 'normal'];
