@@ -21,7 +21,13 @@
 .my-projects {
   text-align: center;
   padding: $gutter $gutter-xlarge $gutter-xlarge;
-  background-color: $color-strawberry-lighter;
+  background-color: $color-floss-light;
+
+  h1 {
+    color: $color-tangerine;
+    text-shadow: 3px 3px $color-chocolate;
+  }
+
 }
 
 

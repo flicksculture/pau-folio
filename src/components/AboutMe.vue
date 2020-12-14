@@ -22,6 +22,12 @@
   text-align: center;
   background-color: $color-cream;
   padding: $gutter $gutter-xlarge $gutter-xlarge;
+
+  h1 {
+    color: $color-strawberry;
+    text-shadow: 3px 3px $color-chocolate;
+  }
+
 }
 .about-me::before{
   content: "";
@@ -32,8 +38,8 @@
   background-repeat: repeat;
   height: 10px;
   background-size: 20px 20px;
-  background-image:
-    radial-gradient(circle at 10px -5px, transparent 12px, $color-strawberry-lighter 13px);
+  background-image: radial-gradient(circle at 10px -5px, transparent 13px, $color-floss-light 13px);
+  background-clip: border-box;
 }
 .about-me::after{
   content: "";
@@ -44,8 +50,11 @@
   background-repeat: repeat;
   height: 15px;
   background-size: 40px 20px;
-  background-image:
-    radial-gradient(circle at 10px 15px, $color-strawberry-lighter 12px, transparent 13px);
+  border-image-width: 0px 0px 6px 0px;
+  background-image: radial-gradient(circle at 10px 15px, $color-floss-light 12px, transparent 12px);
+  background-clip: padding-box;
+  -webkit-appearance: none;
+
 }
 
 

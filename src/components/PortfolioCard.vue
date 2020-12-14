@@ -18,6 +18,11 @@ $-hero-desktop-height: 300px;
 .portfolio-card {
   position: relative;
   max-width: 100%;
+
+  h1 {
+    font-family: $title-font;
+  }
+
   @include respond-to("small and down") {
     min-height: rem($-hero-mobile-height);
   }
