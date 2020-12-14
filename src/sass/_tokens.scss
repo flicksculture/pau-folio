@@ -1,1 +1,58 @@
-// app specific tokens
+// colors
+$color-cream: #ffeccb;
+$color-cream-light: #fff8dd;
+$color-peach: #fbbf5d;
+$color-mocha: #e7b057;
+$color-tangerine: #fd9854;
+$color-avocado: #b1b054;
+$color-strawberry: #e2515e;
+$color-strawberry-light: #f2788d;
+$color-strawberry-lighter: #EFD4CD;
+$color-chocolate: #704d49;
+$color-chocolate-light: #87695f;
+$color-bubblegum: #01baaa;
+$color-bubblegum-light: #83c1b6;
+$color-black: #212121;
+
+// specific tokens
+$portfolio-line-height: 24px;
+$portfolio-line-height-small: 16px;
+$portfolio-text-size: 16px;
+$portfolio-text-size-small: 12px;
+
+// headings
+$h1-text-size: 40px;
+$h2-text-size: 28px;
+$h3-text-size: 18px;
+$h4-text-size: 16px;
+$h5-text-size: 14px;
+$h6-text-size: 12px;
+
+$h2-text-margin: 0 0 32px 0;
+$h2-text-line-height: 40px;
+$headings-default-line: $portfolio-line-height;
+
+// texts
+$text-font: Open Sans, sans-serif;
+$text-color: $color-black;
+$paragraph-line-height: $portfolio-line-height;
+
+// simple footer
+$footer-background-color: $color-black;
+$footer-text-color: $color-black;
+$footer-vertical-padding: 120px;
+
+// needed for base-page component
+$header-position: fixed;
+
+// base header
+$base-header-height: 55px;
+$base-header-logo-width: 114px;
+$base-header-actions-width: 248px;
+
+$menu-bar-height: 62px;
+
+$page-desktop-header-offset: 55px;
+$page-tablet-header-offset: 55px;
+$page-mobile-header-offset: 55px;
+$anchor-link-offset: 0px;

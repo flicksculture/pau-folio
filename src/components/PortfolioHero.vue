@@ -1,16 +1,10 @@
 <template>
   <section class="main-page-hero">
     <div class="main-page-hero__cover">
-      <themed-image>
-        <img src="@/assets/hero-color.svg" alt="main-page-hero">
-      </themed-image>
+      <img src="@/assets/hero-background.jpg" alt="main-page-hero">
     </div>
     <div class="main-page-hero__content">
-      <div class="main-page-hero__title">
-        <div class="main-page-hero__title__container">
-          <slot></slot>
-        </div>
-      </div>
+      <slot>Paulina Osuna</slot>
     </div>
   </section>
 </template>
@@ -18,7 +12,7 @@
 <style lang="scss">
 $-hero-mobile-height: 240px;
 $-hero-tablet-height: 280px;
-$-hero-desktop-height: 250px;
+$-hero-desktop-height: 300px;
 
 $-logo-size-desktop: 78px;
 $-logo-size-mobile: 68px;
@@ -26,7 +20,6 @@ $-logo-size-mobile: 68px;
 .main-page-hero {
   position: relative;
   max-width: 100%;
-
   @include respond-to("small and down") {
     min-height: rem($-hero-mobile-height);
   }
@@ -34,12 +27,12 @@ $-logo-size-mobile: 68px;
     min-height: rem($-hero-tablet-height);
   }
   @include respond-to("large and up") {
-    height: rem($-hero-desktop-height);
+    max-height: rem($-hero-desktop-height);
   }
 
   &__cover {
     img {
-      position: absolute;
+      position: relative;
       width: 100%;
       height: 100%;
       overflow: hidden;
@@ -47,7 +40,6 @@ $-logo-size-mobile: 68px;
       transform: rotate(180deg);
 
       @include respond-to("small and down") {
-        object-position: left;
         min-height: rem($-hero-mobile-height);
                 object-position: 0% 0%;
 
@@ -62,76 +54,21 @@ $-logo-size-mobile: 68px;
     }
   }
 
-  &__fg {
-    display: none;
-  }
-
   &__content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border: 4px solid;
-    border-radius: 16px;
-
-    background-color: var(--theme-bg);
-    color: var(--theme-fg);
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      max-height: 180px;
+      max-width: 280px;
+    }
 
     @include respond-to("large and up") {
       min-width: rem(600px);
     }
   }
 
-  &__title {
-    position: relative;
-    width: 100%;
-    height: 100%;
-
-    @include respond-to("small and down") {
-      padding-top: rem(24px);
-      padding-bottom: rem(24px);
-    }
-    @include respond-to("medium") {
-      padding: $gutter-large;
-    }
-    @include respond-to("large and up") {
-      padding-top: rem(55px);
-      padding-bottom: rem(34px);
-    }
-
-    &__container {
-      width: 100%;
-      height: 100%;
-
-      h2 {
-        margin: 0;
-        text-align: center;
-
-        @include respond-to("small and down") {
-          width: rem(303px);
-          // TODO Maybe pass to a token
-          font-size: rem(24px);
-        }
-        @include respond-to("medium") {
-
-        }
-        @include respond-to("large and up") {
-          font-size: rem(32px);
-        }
-      }
-
-      img {
-        @include respond-to("medium and up") {
-          width: rem($-logo-size-desktop);
-          height: rem($-logo-size-desktop);
-        }
-        @include respond-to("small and down") {
-          width: rem($-logo-size-mobile);
-          height: rem($-logo-size-mobile);
-        }
-      }
-    }
-  }
 
 }
 </style>

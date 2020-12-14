@@ -1,29 +1,16 @@
 <template>
-  <simple-layout>
-    <template #logo>Portfolio</template>
-    <template #actions>
-
-    </template>
-    <template #nav-toggle>
-      <g-image src="@/assets/menu.svg" alt="menu"></g-image>
-    </template>
-    <template #nav-toggle-close>
-      <g-image class="close-nav" src="@/assets/close-icon.svg" alt="menu"></g-image>
-    </template>
-    <template #footer>
-      <single-column>
-        With ❤️ by Axolotek
-      </single-column>
-    </template>
-    <main>
-      <slot></slot>
-    </main>
-  </simple-layout>
+  <div class="base-layout">
+    <slot name="header"></slot>
+    <slot></slot>
+    <slot name="footer"></slot>
+  </div>
 </template>
 
-<style lang="scss" scoped>
-.close-nav {
-  width: 100% !important;
-  height: 100% !important;
-}
+<style lang="scss">
+  .base-layout {
+    display: grid;
+    // this is due to the fixed header for all pages
+    grid-template-rows: 1fr min-content;
+    min-height: 100%;
+  }
 </style>
