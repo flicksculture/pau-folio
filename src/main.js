@@ -8,7 +8,7 @@ import PortfolioFooter from '@/components/PortfolioFooter'
 import AboutMe from '@/components/AboutMe'
 import PortfolioPage from '@/components/PortfolioPage'
 import ProjectCard from '@/components/ProjectCard'
-import Flare from '@lkmx/flare/src/main'
+import Flare from '@lkmx/flare-legacy/src/main'
 
 import '@/sass/styles.scss'
 
