@@ -1,21 +1,19 @@
 <template>
   <default-layout>
     <template #header>
-      <base-header>
-        <template #logo>
-          <g-link to="/">
-            <g-image class="logo" src="@/assets/logo.png" alt="logo"></g-image>
-          </g-link>
-        </template>
-        <template #nav>
-          <div class="menu-link">
-            <a href="#">Projects</a>
-          </div>
-        </template>
-        <template #actions>
-        <!--TODO: Add change language-->
-        </template>
-      </base-header>
+      <transition name="fade">
+        <base-header v-if="scroll > 55">
+          <template #logo>
+            <a class="logo" @click="scrollTop">
+              <g-image  src="@/assets/logo.png" alt="logo"></g-image>
+            </a>
+          </template>
+          <template #actions>
+            <!--TODO: Add change language-->
+          </template>
+        </base-header>
+      </transition>
+
     </template>
     <portfolio-page>
       <slot></slot>
@@ -43,19 +41,82 @@
   }
 }
 
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+
+.slide-in-top {
+  -webkit-animation: slide-in-top 0.5s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+  animation: slide-in-top 0.5s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+}
+
+@-webkit-keyframes slide-in-top {
+  0% {
+    -webkit-transform: translateY(-1000px);
+    transform: translateY(-1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-top {
+  0% {
+    -webkit-transform: translateY(-1000px);
+    transform: translateY(-1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+}
+
+
 .page {
   margin-top: 0;
   height: 0;
+  scroll-behavior: smooth;
 }
 
 .logo {
-  width: 80px;
-  height: 40px;
+  cursor: pointer;
+  border: 0;
+
+  img {
+    width: 80px;
+    height: 40px;
+  }
 }
 </style>
 <script>
   import DefaultLayout from "./DefaultLayout";
   export default {
-    components: {DefaultLayout}
+    components: {DefaultLayout},
+    data: function () {
+      return {
+        scroll: null
+      }
+    },
+    methods: {
+      updateScroll() {
+        this.scroll = window.scrollY
+      },
+      scrollTop() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+      }
+    },
+    mounted() {
+      window.addEventListener('scroll', this.updateScroll);
+    }
   }
 </script>
+

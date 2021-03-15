@@ -1,7 +1,7 @@
 <template>
   <section class="main-page-hero">
     <div class="main-page-hero__cover">
-      <img src="@/assets/hero-background.jpg" alt="main-page-hero">
+      <img src="@/assets/background.jpeg" alt="main-page-hero">
     </div>
     <div class="main-page-hero__content">
       <slot>Paulina Osuna</slot>
@@ -12,12 +12,13 @@
 <style lang="scss">
 $-hero-mobile-height: 240px;
 $-hero-tablet-height: 280px;
-$-hero-desktop-height: 300px;
+$-hero-desktop-height: 720px;
 
 $-logo-size-desktop: 78px;
 $-logo-size-mobile: 68px;
 
 .main-page-hero {
+
   position: relative;
   max-width: 100%;
   @include respond-to("small and down") {
@@ -36,8 +37,6 @@ $-logo-size-mobile: 68px;
       width: 100%;
       height: 100%;
       overflow: hidden;
-      object-fit: cover;
-      transform: rotate(180deg);
 
       @include respond-to("small and down") {
         min-height: rem($-hero-mobile-height);
@@ -68,7 +67,5 @@ $-logo-size-mobile: 68px;
       min-width: rem(600px);
     }
   }
-
-
 }
 </style>
