@@ -3,7 +3,7 @@
   <section class="main-page-hero">
     <div class="main-page-hero__cover">
       <parallax :speed-factor=".2">
-        <img src="@/assets/background.jpeg" alt="main-page-hero">
+        <g-image src="@/assets/background.jpeg" alt="main-page-hero"></g-image>
       </parallax>
     </div>
     <div class="main-page-hero__content">
