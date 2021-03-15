@@ -11,9 +11,6 @@
 </template>
 
 <style lang="scss">
-$-hero-mobile-height: 240px;
-$-hero-tablet-height: 280px;
-$-hero-desktop-height: 300px;
 
 .portfolio-card {
   position: relative;

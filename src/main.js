@@ -7,7 +7,6 @@ import PortfolioCard from '@/components/PortfolioCard'
 import PortfolioFooter from '@/components/PortfolioFooter'
 import AboutMe from '@/components/AboutMe'
 import PortfolioPage from '@/components/PortfolioPage'
-import ProjectCard from '@/components/ProjectCard'
 import Flare from '@lkmx/flare-legacy/src/main'
 
 import '@/sass/styles.scss'
@@ -22,7 +21,6 @@ export default async function (Vue, { router, head, isClient, appOptions }) {
   Vue.component('PortfolioPage', PortfolioPage)
   Vue.component('PortfolioCard', PortfolioCard)
   Vue.component('PortfolioFooter', PortfolioFooter)
-  Vue.component('ProjectCard', ProjectCard)
   Vue.component('AboutMe', AboutMe)
 
 }
