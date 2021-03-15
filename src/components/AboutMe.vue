@@ -29,33 +29,6 @@
   }
 
 }
-.about-me::before{
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background-repeat: repeat;
-  height: 10px;
-  background-size: 20px 20px;
-  background-image: radial-gradient(circle at 10px -5px, transparent 13px, $color-floss-light 13px);
-  background-clip: border-box;
-}
-.about-me::after{
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background-repeat: repeat;
-  height: 15px;
-  background-size: 40px 20px;
-  border-image-width: 0px 0px 6px 0px;
-  background-image: radial-gradient(circle at 10px 15px, $color-floss-light 12px, transparent 12px);
-  background-clip: padding-box;
-  -webkit-appearance: none;
-
-}
 
 
 

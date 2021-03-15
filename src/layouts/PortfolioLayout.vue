@@ -83,7 +83,6 @@
 .page {
   margin-top: 0;
   height: 0;
-  scroll-behavior: smooth;
 }
 
 .logo {
@@ -110,8 +109,12 @@
         this.scroll = window.scrollY
       },
       scrollTop() {
-        document.body.scrollTop = 0;
-        document.documentElement.scrollTop = 0;
+        this.intervalId = setInterval(() => {
+          if (window.pageYOffset === 0) {
+            clearInterval(this.intervalId)
+          }
+          window.scroll(0, window.pageYOffset - 50)
+        }, 20)
       }
     },
     mounted() {
