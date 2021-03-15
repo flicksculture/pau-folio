@@ -1,14 +1,27 @@
 <template>
+  <ClientOnly>
   <section class="main-page-hero">
     <div class="main-page-hero__cover">
-      <img v-parallax="0.2" src="@/assets/background.jpeg" alt="main-page-hero">
+      <parallax :speed-factor=".2">
+        <img src="@/assets/background.jpeg" alt="main-page-hero">
+      </parallax>
     </div>
     <div class="main-page-hero__content">
       <slot>Paulina Osuna</slot>
     </div>
   </section>
+  </ClientOnly>
 </template>
 
+<script>
+  import Parallax from "vue-parallaxy";
+
+  export default {
+    components: {
+      Parallax
+    }
+  };
+</script>
 <style lang="scss">
 $-hero-mobile-height: 240px;
 $-hero-tablet-height: 280px;
@@ -69,3 +82,4 @@ $-logo-size-mobile: 68px;
   }
 }
 </style>
+

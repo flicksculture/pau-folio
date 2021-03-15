@@ -9,13 +9,11 @@ import AboutMe from '@/components/AboutMe'
 import PortfolioPage from '@/components/PortfolioPage'
 import ProjectCard from '@/components/ProjectCard'
 import Flare from '@lkmx/flare/src/main'
-import VueParallaxJs from 'vue-parallax-js'
 
 import '@/sass/styles.scss'
 
 export default async function (Vue, { router, head, isClient, appOptions }) {
   Vue.use(Flare)
-  Vue.use(VueParallaxJs)
   Vue.component('BaseLayout', BaseLayout)
   Vue.component('PortfolioLayout', PortfolioLayout)
   Vue.component('DefaultLayout', DefaultLayout)

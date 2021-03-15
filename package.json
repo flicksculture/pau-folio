@@ -9,7 +9,8 @@
   "dependencies": {
     "@lkmx/flare": "0.28.14",
     "gridsome": "^0.7.0",
-    "vue-parallax-js": "^0.2.3"
+    "vue-parallax-js": "^0.2.3",
+    "vue-parallaxy": "^1.1.1"
   },
   "devDependencies": {
     "eslint": "^7.11.0",

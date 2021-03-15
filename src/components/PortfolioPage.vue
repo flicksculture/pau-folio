@@ -6,7 +6,6 @@
 
 <style lang="scss" scoped>
   .base-page {
-    background-color: $color-chocolate-light;
 
   }
 </style>
