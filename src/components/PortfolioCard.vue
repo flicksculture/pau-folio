@@ -23,15 +23,7 @@ $-hero-desktop-height: 300px;
     font-family: $title-font;
   }
 
-  @include respond-to("small and down") {
-    min-height: rem($-hero-mobile-height);
-  }
-  @include respond-to("medium") {
-    min-height: rem($-hero-tablet-height);
-  }
-  @include respond-to("large and up") {
-    max-height: rem($-hero-desktop-height);
-  }
+
 }
 
 </style>

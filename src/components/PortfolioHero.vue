@@ -1,7 +1,7 @@
 <template>
   <section class="main-page-hero">
     <div class="main-page-hero__cover">
-      <img src="@/assets/background.jpeg" alt="main-page-hero">
+      <img v-parallax="0.2" src="@/assets/background.jpeg" alt="main-page-hero">
     </div>
     <div class="main-page-hero__content">
       <slot>Paulina Osuna</slot>
@@ -12,7 +12,7 @@
 <style lang="scss">
 $-hero-mobile-height: 240px;
 $-hero-tablet-height: 280px;
-$-hero-desktop-height: 720px;
+$-hero-desktop-height: 768px;
 
 $-logo-size-desktop: 78px;
 $-logo-size-mobile: 68px;
