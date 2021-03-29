@@ -8,7 +8,7 @@
 <style lang="scss">
 
 .portfolio-footer {
-  background-color: $color-chocolate;
+  background-color: $color-black;
   color: $color-cream;
   padding: $gutter-large;
   display: grid;

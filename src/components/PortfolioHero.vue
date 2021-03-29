@@ -33,35 +33,26 @@ $-logo-size-mobile: 68px;
 
   position: relative;
   max-width: 100%;
-  @include respond-to("small and down") {
-    min-height: rem($-hero-mobile-height);
-  }
-  @include respond-to("medium") {
-    min-height: rem($-hero-tablet-height);
-  }
+
+
   @include respond-to("large and up") {
-    max-height: rem($-hero-desktop-height);
+    max-height: 100vh;
   }
 
   &__cover {
+    .Masthead {
+      height: 100vh !important;
+      background-color: $color-black;
+    }
+
     img {
       position: relative;
       width: 100%;
       height: 100%;
       overflow: hidden;
+      max-height: 100vh;
 
-      @include respond-to("small and down") {
-        min-height: rem($-hero-mobile-height);
-                object-position: 0% 0%;
 
-      }
-      @include respond-to("medium") {
-        min-height: rem($-hero-tablet-height);
-      }
-      @include respond-to("large and up") {
-        height: rem($-hero-desktop-height);
-        object-position: 0% 0%;
-      }
     }
   }
 
@@ -79,6 +70,8 @@ $-logo-size-mobile: 68px;
       min-width: rem(600px);
     }
   }
+
+
 }
 </style>
 

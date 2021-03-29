@@ -6,6 +6,7 @@
     <div class="content">
       <about-me></about-me>
     </div>
+
   </portfolio-layout>
 </template>
 

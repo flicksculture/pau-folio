@@ -22,7 +22,7 @@ $-nav-item-width: 109px;
   top: 0;
   width: 100%;
   height: $base-header-height;
-  background-color: rgba(117, 77, 74, 0.9);
+  background-color: rgba(35, 29, 29, 0.9);
   z-index: 65;
 
   &__container {
