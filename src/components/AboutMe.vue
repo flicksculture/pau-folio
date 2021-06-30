@@ -24,9 +24,9 @@
           <g-image src="@/assets/about-me-photo.jpg" alt="about-me"></g-image>
         </div>
       </div>
-      <a href="mailto:osunamancilla@gmail.com" target="_blank" class="float briefcase">
+      <g-link to="/projects" class="float briefcase">
         <font-awesome-icon icon="briefcase" class=" my-float"/>
-      </a>
+      </g-link>
       <a href="mailto:osunamancilla@gmail.com" target="_blank" class="float mail">
         <font-awesome-icon icon="envelope" class=" my-float"/>
       </a>
@@ -71,6 +71,15 @@
     @media all and (max-width: 1000px) {
       padding: 15% 25% 0;
       text-align: center;
+    }
+  }
+
+  .about-me-photo {
+    height: 90%;
+
+    img {
+      height: 100%;
+      object-fit: cover;
     }
   }
 

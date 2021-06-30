@@ -14,21 +14,7 @@
   </page-layout>
 </template>
 
-<script>
-
-  import PortfolioHero from '../components/PortfolioHero'
-
-  export default {
-    components: {PortfolioHero},
-    data() {
-      return {
-
-      };
-    },
-  }
-</script>
-
-<style lang="scss">
+<style lang="scss" scoped>
   .content {
     scroll-behavior: smooth;
     background-color: $color-cream-light;
@@ -36,8 +22,6 @@
     padding: 7% 5%;
     @media all and (max-width: 1000px) {
       padding: 7% 0;
-
-
     }
 
   }
