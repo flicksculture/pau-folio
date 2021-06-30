@@ -8,6 +8,8 @@ import PortfolioFooter from '@/components/PortfolioFooter'
 import AboutMe from '@/components/AboutMe'
 import PortfolioPage from '@/components/PortfolioPage'
 import Flare from '@lkmx/flare-legacy/src/main'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+
 
 import '@/sass/styles.scss'
 
@@ -22,5 +24,5 @@ export default async function (Vue, { router, head, isClient, appOptions }) {
   Vue.component('PortfolioCard', PortfolioCard)
   Vue.component('PortfolioFooter', PortfolioFooter)
   Vue.component('AboutMe', AboutMe)
-
+  Vue.component('font-awesome-icon', FontAwesomeIcon)
 }

@@ -24,11 +24,20 @@
           <g-image src="@/assets/about-me-photo.jpg" alt="about-me"></g-image>
         </div>
       </div>
+      <a href="mailto:osunamancilla@gmail.com" target="_blank" class="float briefcase">
+        <font-awesome-icon icon="briefcase" class=" my-float"/>
+      </a>
+      <a href="mailto:osunamancilla@gmail.com" target="_blank" class="float mail">
+        <font-awesome-icon icon="envelope" class=" my-float"/>
+      </a>
     </div>
   </transition>
 </template>
 
 <script>
+  import { library } from '@fortawesome/fontawesome-svg-core'
+  import { faEnvelope, faBriefcase } from '@fortawesome/free-solid-svg-icons'
+  library.add(faEnvelope, faBriefcase)
   export default {
     data: function () {
       return {
@@ -59,29 +68,28 @@
 
   .about-me-title {
     padding-bottom: 2%;
-    @media all and (max-width: 770px) {
-      padding: 5% 25% 0;
+    @media all and (max-width: 1000px) {
+      padding: 15% 25% 0;
       text-align: center;
     }
   }
 
   .about-me-text {
+
     p {
       font-family: 'Merriweather', serif;
       line-height: 36px;
       font-size: 20px;
 
-      @media all and (max-width: 770px) {
-        padding: 5% 10%;
+      @media all and (max-width: 1000px) {
+        padding: 2% 10%;
         text-align: center;
-        font-family: 'Merriweather', serif;
         line-height: 40px;
       }
 
       @media all and (max-width: 500px) {
         padding: 5% 10%;
         text-align: center;
-        font-family: 'Merriweather', serif;
         line-height: 30px;
         font-size: 16px;
       }
@@ -95,6 +103,11 @@
     width: 100%;
     grid-column-gap: 10%;
     padding-right: 25%;
+    font-family: 'Merriweather', serif;
+
+    @media all and (max-width: 1000px) {
+      display: none;
+    }
 
   }
 
@@ -103,10 +116,9 @@
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 5%;
 
-    @media all and (max-width: 770px) {
+    @media all and (max-width: 1000px) {
       grid-template-columns: 1fr;
     }
-
   }
 
   .fade-enter-active, .fade-leave-active {
@@ -181,5 +193,43 @@
       border: 2px solid $color-peach;
 
     }
+  }
+
+  .float {
+    display: none;
+    @media all and (max-width: 1000px) {
+      display: block;
+      position:fixed;
+      width:45px;
+      height:45px;
+      background-color:$color-peach;
+      color:#FFF;
+      border-radius:50px;
+      text-align:center;
+      box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+    }
+    &:hover {
+      color:#FFF;
+    }
+  }
+
+  .mail {
+    bottom: 16px;
+    left: 25px;
+  }
+
+  .briefcase {
+    bottom: 75px;
+    left: 25px;
+  }
+
+  .my-float{
+    display: none;
+    @media all and (max-width: 1000px) {
+      display: block;
+      font-size: 20px;
+      margin:12px;
+    }
+
   }
 </style>
