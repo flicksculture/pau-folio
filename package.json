@@ -12,6 +12,7 @@
     "@fortawesome/vue-fontawesome": "^2.0.2",
     "@lkmx/flare-legacy": "0.28.19",
     "gridsome": "^0.7.0",
+    "vue-expandable-image": "^0.1.0",
     "vue-parallaxy": "^1.1.1"
   },
   "devDependencies": {

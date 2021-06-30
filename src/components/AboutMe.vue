@@ -16,7 +16,7 @@
           </p>
           <div class="buttons">
             <a class="btn first"  href="mailto:osunamancilla@gmail.com" target="_blank">Contact</a>
-            <button class="btn first">Projects</button>
+            <g-link to="/projects" class="btn first">Projects</g-link>
           </div>
 
         </div>
@@ -170,13 +170,14 @@
     border-radius: 0.6em;
     color: $color-black;
     cursor: pointer;
-    font-size: 1rem;
     line-height: 1;
     padding: 1.2em 2.8em;
     text-decoration: none;
     font-weight: 700;
     text-align: center;
     width: 100%;
+    font-size: 18px;
+
 
     &:hover{
       color: #fff;

@@ -1,6 +1,5 @@
 <template>
   <div class="portfolio-footer">
-    <g-link to="https://vsco.co/pauuuuom/gallery"><g-image class="social-media" src="@/assets/vsco-logo.png" alt="logo"></g-image></g-link>
   </div>
 
 </template>
