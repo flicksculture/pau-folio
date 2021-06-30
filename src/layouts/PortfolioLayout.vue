@@ -13,7 +13,6 @@
           </template>
         </base-header>
       </transition>
-
     </template>
     <portfolio-page>
       <slot></slot>

@@ -27,4 +27,8 @@
   ::-webkit-scrollbar {
     display: none;
   }
+
+  ::selection {
+    background: $color-peach;
+  }
 </style>

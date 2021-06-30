@@ -1,63 +1,185 @@
 <template>
-  <portfolio-card class="about-me">
-    <template #content>
-      <twin-columns>
-        <template #left>
-          <div class="about-me-title">
-            <g-image src="@/assets/about-me.png" alt="about-me" ></g-image>
-          </div>
-          <p class="about-me-content">
+  <transition name="fade">
+    <div class="about-me" v-if="scroll > 20">
+      <div class="about-me-title">
+        <g-image src="@/assets/about-me.png" alt="about-me"></g-image>
+      </div>
+      <div class="about-me-content">
+        <div class="about-me-text">
+          <p>
             Architect with Mexican molding<br>
-            My identity lies in the cultural aspects of growing up calling two countries, such as Mexico and the US, home. Those factors molded me and defined my architectural style.
+            My identity lies in the cultural aspects of growing up calling two countries, such as Mexico and the US,
+            home. Those factors molded me and defined my architectural style.
             Binationalism and bilingualism are things I have ingrained and take pride in.
-            An adept concept, finding a balance between the constructed spaces, its surroundings and context, I think, are key to the success of an architectonic piece.
+            An adept concept, finding a balance between the constructed spaces, its surroundings and context, I think,
+            are key to the success of an architectonic piece.
           </p>
-        </template>
-        <template #right>
-          <div class="about-me-photo">
+          <div class="buttons">
+            <a class="btn first"  href="mailto:osunamancilla@gmail.com" target="_blank">Contact</a>
+            <button class="btn first">Projects</button>
           </div>
 
-        </template>
-
-      </twin-columns>
-    </template>
-  </portfolio-card>
+        </div>
+        <div class="about-me-photo">
+          <g-image src="@/assets/about-me-photo.jpg" alt="about-me"></g-image>
+        </div>
+      </div>
+    </div>
+  </transition>
 </template>
+
+<script>
+  export default {
+    data: function () {
+      return {
+        scroll: null
+      }
+    },
+    methods: {
+      updateScroll() {
+        this.scroll = window.scrollY
+      },
+    },
+    mounted() {
+      window.addEventListener('scroll', this.updateScroll);
+    }
+  }
+</script>
 
 <style lang="scss">
 
+  .about-me {
+    display: grid;
+    padding: 5% 15%;
 
-.about-me {
-  text-align: center;
-  background-color: #F8F8FF;
-  padding: $gutter $gutter-xlarge 0;
-
-
-
-
-
-}
-.about-me-title {
-  img {
-    height: 52px;
-    width: 240px;
+    @media all and (max-width: 770px) {
+      padding: 0;
+    }
   }
-}
-.about-me-content {
-  font-size: 20px;
-  letter-spacing: normal;
-  line-height: 1.4;
-}
 
-.about-me-photo {
-
-  img {
-    max-width: 50%;
-    height: auto;
-    box-sizing: content-box;
+  .about-me-title {
+    padding-bottom: 2%;
+    @media all and (max-width: 770px) {
+      padding: 5% 25% 0;
+      text-align: center;
+    }
   }
-}
 
+  .about-me-text {
+    p {
+      font-family: 'Merriweather', serif;
+      line-height: 36px;
+      font-size: 20px;
 
+      @media all and (max-width: 770px) {
+        padding: 5% 10%;
+        text-align: center;
+        font-family: 'Merriweather', serif;
+        line-height: 40px;
+      }
 
+      @media all and (max-width: 500px) {
+        padding: 5% 10%;
+        text-align: center;
+        font-family: 'Merriweather', serif;
+        line-height: 30px;
+        font-size: 16px;
+      }
+    }
+  }
+
+  .buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: start;
+    width: 100%;
+    grid-column-gap: 10%;
+    padding-right: 25%;
+
+  }
+
+  .about-me-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 5%;
+
+    @media all and (max-width: 770px) {
+      grid-template-columns: 1fr;
+    }
+
+  }
+
+  .fade-enter-active, .fade-leave-active {
+    transition: opacity 2.2s;
+  }
+
+  .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */
+  {
+    opacity: 0;
+  }
+
+  .slide-in-top {
+    -webkit-animation: slide-in-top 0.5s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+    animation: slide-in-top 0.5s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+  }
+
+  @-webkit-keyframes slide-in-top {
+    0% {
+      -webkit-transform: translateY(-1000px);
+      transform: translateY(-1000px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slide-in-top {
+    0% {
+      -webkit-transform: translateY(-1000px);
+      transform: translateY(-1000px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+  }
+
+  // Basic Button Style
+  .btn {
+    display: grid;
+    background-color: transparent;
+    border: 2px solid $color-black;
+    border-radius: 0.6em;
+    color: $color-black;
+    cursor: pointer;
+    font-size: 1rem;
+    line-height: 1;
+    padding: 1.2em 2.8em;
+    text-decoration: none;
+    font-weight: 700;
+    text-align: center;
+    width: 100%;
+
+    &:hover{
+      color: #fff;
+      outline: 0;
+    }
+  }
+
+  //BUTTON 1
+  .first {
+    transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+
+    &:hover {
+      box-shadow: 0 0 40px 40px $color-peach inset;
+      border: 2px solid $color-peach;
+
+    }
+  }
 </style>
